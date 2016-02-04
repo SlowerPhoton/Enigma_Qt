@@ -45,13 +45,14 @@ public:
     QPushButton *pushButton_2;
     QPushButton *generate;
     QPushButton *set;
+    QSpinBox *randSeed;
     QPushButton *pushButton_3;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(402, 325);
+        MainWindow->resize(500, 325);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         shift1 = new QSpinBox(centralWidget);
@@ -114,11 +115,13 @@ public:
         generate->setGeometry(QRect(310, 10, 75, 41));
         set = new QPushButton(centralWidget);
         set->setObjectName(QStringLiteral("set"));
-        set->setEnabled(false);
         set->setGeometry(QRect(310, 70, 75, 41));
+        randSeed = new QSpinBox(centralWidget);
+        randSeed->setObjectName(QStringLiteral("randSeed"));
+        randSeed->setGeometry(QRect(400, 20, 71, 22));
+        randSeed->setMaximum(9999);
         pushButton_3 = new QPushButton(centralWidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setEnabled(true);
         pushButton_3->setGeometry(QRect(320, 230, 75, 81));
         MainWindow->setCentralWidget(centralWidget);
 
@@ -139,8 +142,8 @@ public:
         label_6->setText(QApplication::translate("MainWindow", "rotor 3", 0));
         pushButton_2->setText(QApplication::translate("MainWindow", "Encrypt", 0));
         generate->setText(QApplication::translate("MainWindow", "Generate key", 0));
-        set->setText(QApplication::translate("MainWindow", "Plugboard", 0));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Encrypt file", 0));
+        set->setText(QApplication::translate("MainWindow", "Set key", 0));
+        pushButton_3->setText(QApplication::translate("MainWindow", "PushButton", 0));
     } // retranslateUi
 
 };
